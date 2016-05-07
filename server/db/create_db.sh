@@ -29,6 +29,7 @@ function createDatabase {
 
 #Insert test row to Recipes Table
 function seedData {
+  #CUPCAKES
   psql recipes -c "INSERT INTO recipes (
     title,
     images ,
@@ -105,6 +106,173 @@ function seedData {
     ]
   )";
   echo '✔  Cupcakes in the oven!';
+
+  #SAMOSAS
+  psql recipes -c "INSERT INTO recipes (
+    title,
+    images ,
+    followers ,
+    yield,
+    yield_unit ,
+    ingredients ,
+    prep_time,
+    prep_steps,
+    cook_time,
+    cook_steps,
+    finish_steps,
+    tags
+  ) VALUES (
+    'Samosas',
+    ARRAY [
+      'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/74/55/picO1qehQ.jpg',
+      'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/74/55/picGG8P8T.jpg'
+    ],
+    ARRAY [
+      'user1',
+      'user2',
+      'user3'
+    ],
+    24,
+    'Samosas',
+    ARRAY [
+      '3 cups all-purpose flour',
+      '1 teaspoon salt',
+      '4 tablespoons melted butter or 4 tablespoons ghee',
+      '3⁄4 cup cold water',
+      '2 lbs potatoes, peeled',
+      '4 tablespoons vegetable oil',
+      '2 teaspoons mustard seeds (yellow or black)',
+      '2 medium onions, finely chopped',
+      '4 tablespoons fresh ginger, chopped',
+      '3 teaspoons fennel seeds',
+      '1 teaspoon ground cumin',
+      '1 tablespoon ground coriander',
+      '1 teaspoon turmeric',
+      '1 cup frozen green pea, defrosted',
+      '1 teaspoon salt',
+      '2 tablespoons water',
+      '1 teaspoon garam masala',
+      '1⁄2 teaspoon ground cayenne pepper',
+    ],
+    120,
+    ARRAY [
+      'First put the potatoes on to boil until tender, then drain and cool.',
+      'While the potatoes are cooking, make the pastry by mixing the flour and salt in a bowl.',
+      'Pour in the butter or ghee and rub together wtih the flour until it becomes slightly flaky.',
+      'Pour 3/4 cup water over the flour and pull the dough together with your hands.',
+      'You can add up to 4 tbsp more water, one spoonful at a time, until everything comes together in a bowl.',
+      'From here you can knead the dough by hand for about 10 minutes or throw it in a mixer with a dough attachment, going until the dough is smooth and elastic.',
+      'When the dough is done, place it in a bowl, rub with oil and cover until you are ready to fill the samosas.',
+      'Next, start making the filling by cutting your cooked potatoes into cubes.',
+      'Heat the oil in a frying pan and throw in the mustard seeds.',
+      'Cook until they start to crackle and burst and when that happens immediately add your chopped onion and ginger.',
+      'Cook for a few minutes until the onion softens and then add the fennel, cumin, turmeric, potatoes, peas, salt and water.',
+      'Stir well and then reduce the heat to low and let cook for about 5 minutes.',
+      'Sprinkle over the garam masala and hot pepper and stir again.',
+      'Taste for seasoning and then take off the heat.',
+      'Now it is time to start filling your samosas.',
+      'Grab a piece of dough by pinching off a piece and rolling it thinly and into a circle.',
+      'You can make the samosas any size you like.',
+      'With a knife, cut the circle in half, moisten the straight edge with a finger dipped in water and then shape it into a cone, pressing the straight edges together to form a seal.',
+      'You should now have a little ice cream cone shaped piece of dough which you can spoon filling into.',
+      'Fill and then moisten the top edges and press closed.',
+      'Set on a plate and cover with foil or plastic wrap until you are ready to cook (up to 2-3 hours later).',
+    ],
+    15,
+    ARRAY [
+      'To deep fry the samosas, pour 3 cups of vegetable oil into a 12 inch wok and heat until a piece of dough thrown into the oil bubbles.',
+      'If you have a deep fryer, you want a temperature around 375°F.',
+      'Brown on both sides and drain on paper towel.',
+    ],
+    ARRAY [
+      'Cool on the paper towel or drying rack',
+      'Finally, you can enjoy a samosa!'
+    ],
+    ARRAY[
+      'vegetarian',
+    ]
+  )";
+
+  echo '✔  Dosas and Samosas!';
+
+  #ICE CREAM
+  psql recipes -c "INSERT INTO recipes (
+    title,
+    images ,
+    followers ,
+    yield,
+    yield_unit ,
+    ingredients ,
+    prep_time,
+    prep_steps,
+    cook_time,
+    cook_steps,
+    finish_steps,
+    tags
+  ) VALUES (
+    'Vegan Red Velvet Cupcakes',
+    ARRAY [
+      'http://40aprons.com/wp-content/uploads/2013/10/red_velvet_cupcakes+2+of+81.jpg',
+      'http://cf.tasteandtellblog.com/wp-content/uploads/2014/09/Red-Velvet-Cupcakes-recipe-taste-and-tell-1b-opt.jpg',
+      'http://ww2.hdnux.com/photos/13/62/31/3089985/3/920x920.jpg'
+    ],
+    ARRAY [
+      'user1',
+      'user2',
+      'user3'
+    ],
+    12,
+    'Cupcakes',
+    ARRAY [
+      '1 cup soymilk',
+      '1 teaspoon apple cider vinegar',
+      '1 1⁄4 cups all-purpose flour',
+      '1 cup granulated sugar',
+      '2 tablespoons cocoa powder',
+      '1⁄2 teaspoon baking powder',
+      '1⁄2 teaspoon baking soda',
+      '1⁄2 teaspoon salt',
+      '1⁄3 cup canola oil',
+      '2 tablespoons red food coloring',
+      '2 teaspoons vanilla extract',
+      '1⁄4 teaspoon almond extract',
+      '1 teaspoon chocolate extract',
+      '1⁄4 cup vegan margarine, non-hydrogenated, softened',
+      '1⁄4 cup vegan cream cheese, softened',
+      '2 cups powdered sugar, sifted',
+      '1 teaspoon vanilla extract'
+    ],
+    15,
+    ARRAY [
+      'Preheat oven to 350 degrees and line muffin pans with liners.'
+    ],
+    20,
+    ARRAY [
+      'Whisk together the soy milk and vinegar and set aside to curdle.',
+      'Sift the flour, sugar, cocoa, baking powder, baking soda, and salt into a large bowl and mix.',
+      'Add the oil, food coloring, chocolate extract, Vanilla extract and almond extract to the curdled soy milk. Whisk well to combine.',
+      'Make well in center of dry ingredients and gently fold wet ingredients into dry, mixing until large lumps disappear.',
+      'Do not over mix, or your cupcakes will turn out gummy - small lumps are okay.',
+      'Fill cupcake liners about three-quarters full as these cupcakes will rise fairly high.',
+      'Place in hot oven and bake 18-20 minutes until done, or until toothpick inserted in cetner comes out clean.',
+      'Cool cupcakes in the pan for five mintues, and then transfer to a cooling rack or surface to cool completely.',
+      'For frosting:',
+      'Using a hand mixer, cream together margarine and cream cheese until just combined, then whip in the powdered sugar in 1/2 cup batches.',
+      'Scrape down the sides and mix until smooth and creamy.',
+      'Mix in the vanilla.'
+    ],
+    ARRAY [
+      'Keep tightly covered and refrigerated until ready to use.',
+      'Add sprinkles/garnish if desirerd.'
+    ],
+    ARRAY[
+      'vegan', 
+      'vegetarian',
+      'dairy-free'
+    ]
+  )";
+  
+  echo '✔  Ice Cream You Scream We All Scream For Ice Cream';
 };
 
 function checkDatabase {
@@ -146,3 +314,4 @@ else
   echo '✘  you need to install postgres to continue';
   echo 'Please follow this guide: https://www.codefellows.org/blog/three-battle-tested-ways-to-install-postgresql';
 fi;
+'',
