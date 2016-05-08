@@ -62,17 +62,17 @@ module.exports = {
                 AND id = $2`,
       values: [request.body.newURL, request.body.id],
     };
-    db.query(newQueryObj)
+    db.query(newQueryObj);
     db.query(newQueryObj2)
       .then((data) => {
         // console.log('THE DATA',data)
         response.status(201);
         response.json(data);
         next();
-       }).catch((error) => {
+      }).catch((error) => {
         response.json(error);
         next();
-    });
+      });
   },
 
   removeRecipeImage: (request, response, next) => {
@@ -97,12 +97,68 @@ module.exports = {
 
     db.query(newQueryObj);
     db.query(newQueryObj2).then((data) => {
-      console.log('$$$$$$$$$$$THE DATA',data)
       response.json(data);
       next();
     }).catch((error) => {
       response.json(error);
       next();
     });
+  },
+
+  trendingRecipes: (request, response, next) => {
+    const interval = request.body.interval || '1 day';
+    const limit = request.body.limit || 10;
+
+    // console.log("MADE IT!", ("'"+interval+"'"), limit);
+    const newQueryObj = {
+      name: 'get-trending-recipes',
+      text: `SELECT 
+              *
+              FROM (
+                SELECT
+                  parent,
+                  COUNT (parent)
+                FROM
+                  recipes
+                WHERE
+                  created_at > CURRENT_TIMESTAMP - INTERVAL '1 day'
+                AND
+                  parent is not null
+                GROUP BY
+                  parent
+                ORDER BY
+                  COUNT (parent) DESC 
+                LIMIT $1
+              ) trends`,
+      values: [limit],
+    };
+
+
+
+
+    db.query(newQueryObj).then((data) => {
+      let trendingIds = data.map((element) => {
+        return element.parent;
+      });
+      return trendingIds;
+    }).then((trendingIds) => {
+      const newQueryObj2 = {
+        name: 'get-multiple-recipes',
+        text: `SELECT title
+                   FROM
+                     recipes
+                   WHERE
+                     id = ANY($1)`,
+        values: [trendingIds],
+      };
+      return db.query(newQueryObj2)})
+    .then((data) => {
+      response.json(data);
+      next();
+    }).catch((error) => {
+      response.json(error);
+      next();
+    });
+
   },
 };

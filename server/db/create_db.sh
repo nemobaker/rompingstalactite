@@ -29,6 +29,31 @@ function createDatabase {
 
 #Insert test row to Recipes Table
 function seedData {
+  #USERS
+  psql recipes -c "INSERT INTO users(
+    username
+  ) VALUES (
+    'user1'
+  )"
+
+  psql recipes -c "INSERT INTO users(
+    username
+  ) VALUES (
+    'user2'
+  )"
+
+  psql recipes -c "INSERT INTO users(
+    username
+  ) VALUES (
+    'user3'
+  )"
+
+  psql recipes -c "INSERT INTO users(
+    username
+  ) VALUES (
+    'user4'
+  )"
+  
   #CUPCAKES
   psql recipes -c "INSERT INTO recipes (
     title,
@@ -51,9 +76,9 @@ function seedData {
       'http://ww2.hdnux.com/photos/13/62/31/3089985/3/920x920.jpg'
     ],
     ARRAY [
-      'user1',
-      'user2',
-      'user3'
+      1,
+      2,
+      3
     ],
     12,
     'Cupcakes',
@@ -128,9 +153,9 @@ function seedData {
       'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/74/55/picGG8P8T.jpg'
     ],
     ARRAY [
-      'user1',
-      'user2',
-      'user3'
+      1,
+      2,
+      3
     ],
     24,
     'Samosas',
@@ -152,7 +177,7 @@ function seedData {
       '1 teaspoon salt',
       '2 tablespoons water',
       '1 teaspoon garam masala',
-      '1⁄2 teaspoon ground cayenne pepper',
+      '1⁄2 teaspoon ground cayenne pepper'
     ],
     120,
     ARRAY [
@@ -176,27 +201,29 @@ function seedData {
       'With a knife, cut the circle in half, moisten the straight edge with a finger dipped in water and then shape it into a cone, pressing the straight edges together to form a seal.',
       'You should now have a little ice cream cone shaped piece of dough which you can spoon filling into.',
       'Fill and then moisten the top edges and press closed.',
-      'Set on a plate and cover with foil or plastic wrap until you are ready to cook (up to 2-3 hours later).',
+      'Set on a plate and cover with foil or plastic wrap until you are ready to cook (up to 2-3 hours later).'
     ],
     15,
     ARRAY [
       'To deep fry the samosas, pour 3 cups of vegetable oil into a 12 inch wok and heat until a piece of dough thrown into the oil bubbles.',
       'If you have a deep fryer, you want a temperature around 375°F.',
-      'Brown on both sides and drain on paper towel.',
+      'Brown on both sides and drain on paper towel.'
     ],
     ARRAY [
       'Cool on the paper towel or drying rack',
       'Finally, you can enjoy a samosa!'
     ],
     ARRAY[
-      'vegetarian',
+      'vegetarian'
     ]
   )";
 
   echo '✔  Dosas and Samosas!';
 
-  #ICE CREAM
+
+  #vanilla ICE CREAM
   psql recipes -c "INSERT INTO recipes (
+    author,
     title,
     images ,
     followers ,
@@ -210,69 +237,107 @@ function seedData {
     finish_steps,
     tags
   ) VALUES (
-    'Vegan Red Velvet Cupcakes',
+    3,
+    'Vanilla Ice Cream',
     ARRAY [
-      'http://40aprons.com/wp-content/uploads/2013/10/red_velvet_cupcakes+2+of+81.jpg',
-      'http://cf.tasteandtellblog.com/wp-content/uploads/2014/09/Red-Velvet-Cupcakes-recipe-taste-and-tell-1b-opt.jpg',
-      'http://ww2.hdnux.com/photos/13/62/31/3089985/3/920x920.jpg'
+      'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/47/90/picDnUZU9.jpg',
+      'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/47/90/piceKa5F5.jpg'
     ],
     ARRAY [
-      'user1',
-      'user2',
-      'user3'
+      1,
+      2,
+      3
     ],
-    12,
-    'Cupcakes',
+    1,
+    'Quart',
     ARRAY [
-      '1 cup soymilk',
-      '1 teaspoon apple cider vinegar',
-      '1 1⁄4 cups all-purpose flour',
-      '1 cup granulated sugar',
-      '2 tablespoons cocoa powder',
-      '1⁄2 teaspoon baking powder',
-      '1⁄2 teaspoon baking soda',
-      '1⁄2 teaspoon salt',
-      '1⁄3 cup canola oil',
-      '2 tablespoons red food coloring',
-      '2 teaspoons vanilla extract',
-      '1⁄4 teaspoon almond extract',
-      '1 teaspoon chocolate extract',
-      '1⁄4 cup vegan margarine, non-hydrogenated, softened',
-      '1⁄4 cup vegan cream cheese, softened',
-      '2 cups powdered sugar, sifted',
-      '1 teaspoon vanilla extract'
+      '2 large eggs',
+      '3⁄4 cup sugar',
+      '2 cups heavy whipping cream',
+      '1 cup milk',
+      '2 teaspoons vanilla extract'
     ],
-    15,
+    5,
     ARRAY [
-      'Preheat oven to 350 degrees and line muffin pans with liners.'
+      'Prepare Ice Cream Maker if necessary.'
     ],
     20,
     ARRAY [
-      'Whisk together the soy milk and vinegar and set aside to curdle.',
-      'Sift the flour, sugar, cocoa, baking powder, baking soda, and salt into a large bowl and mix.',
-      'Add the oil, food coloring, chocolate extract, Vanilla extract and almond extract to the curdled soy milk. Whisk well to combine.',
-      'Make well in center of dry ingredients and gently fold wet ingredients into dry, mixing until large lumps disappear.',
-      'Do not over mix, or your cupcakes will turn out gummy - small lumps are okay.',
-      'Fill cupcake liners about three-quarters full as these cupcakes will rise fairly high.',
-      'Place in hot oven and bake 18-20 minutes until done, or until toothpick inserted in cetner comes out clean.',
-      'Cool cupcakes in the pan for five mintues, and then transfer to a cooling rack or surface to cool completely.',
-      'For frosting:',
-      'Using a hand mixer, cream together margarine and cream cheese until just combined, then whip in the powdered sugar in 1/2 cup batches.',
-      'Scrape down the sides and mix until smooth and creamy.',
-      'Mix in the vanilla.'
+     'Whisk the eggs in a mixing bowl until light and fluffy, 1 to 2 minutes.',
+     'Whisk in the sugar, a little at a time, then continue whisking until completely blended, about 1 minute more. Pour in the cream, milk, and vanilla and whisk to blend.',
+     'Transfer the mixture to an ice cream maker and freeze following the manufacturer instructions.'
     ],
     ARRAY [
-      'Keep tightly covered and refrigerated until ready to use.',
-      'Add sprinkles/garnish if desirerd.'
+      'Top with sprinkles, whipped cream, a cherry, and enjoy!'
     ],
     ARRAY[
-      'vegan', 
-      'vegetarian',
-      'dairy-free'
+      'dessert'
     ]
   )";
   
-  echo '✔  Ice Cream You Scream We All Scream For Ice Cream';
+  echo '✔  I Scream You Scream';
+
+  #Cake Batter ICE CREAM
+  psql recipes -c "INSERT INTO recipes (
+    author,
+    parent,
+    title,
+    images ,
+    followers ,
+    yield,
+    yield_unit ,
+    ingredients ,
+    prep_time,
+    prep_steps,
+    cook_time,
+    cook_steps,
+    finish_steps,
+    tags
+  ) VALUES (
+    4,
+    3,
+    'Cake Batter Ice Cream',
+    ARRAY [
+      'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/89/52/f15xnUJJQc2kJB0O1v6o_birthday-cake-ice-cream-7207.jpg',
+      'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/89/52/J3XsYX6tTTeN2E1pi9uB_birthday-cake-ice-cream-7204.jpg',
+      'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/89/52/pic7sRu1R.jpg'
+    ],
+    ARRAY [
+      1,
+      2,
+      3
+    ],
+    11,
+    'Cup Servings',
+    ARRAY [
+      '1 cup whole milk, well chilled',
+      '3⁄4 cup granulated sugar',
+      '2 cups heavy cream, well chilled',
+      '1 teaspoon pure vanilla extract',
+      '2⁄3 cup cake mix'
+    ],
+    5,
+    ARRAY [
+      'Place freezer bowl of ice cream maker into the freezer. It is better to keep it in there 24/7 that way it is always ready.'
+    ],
+    25,
+    ARRAY [
+      'In a medium bowl, whisk the milk and granulated sugar until the sugar is dissolved.',
+      'Stir in the heavy cream and vanilla to taste.',
+      'Stir in cake mix, making sure there are no lumps.',
+      'Pour mixture into the freezer bowl and let mix until it has thickened (about 25-30 minutes).',
+      'Remove ice cream from freezer bowl and place into a separate container.',
+      'Place freezer bowl and the ice cream into the freezer to further harden.'
+    ],
+    ARRAY [
+      'Top with sprinkles, whipped cream, a cherry, and enjoy!'
+    ],
+    ARRAY[
+      'dessert'
+    ]
+  )";
+  
+  echo '✔  We All Scream for Ice Cream!';
 };
 
 function checkDatabase {
@@ -314,4 +379,3 @@ else
   echo '✘  you need to install postgres to continue';
   echo 'Please follow this guide: https://www.codefellows.org/blog/three-battle-tested-ways-to-install-postgresql';
 fi;
-'',
