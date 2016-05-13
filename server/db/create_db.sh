@@ -30,45 +30,25 @@ function createDatabase {
 #Insert test row to Recipes Table
 function seedData {
   #USERS
-  psql recipes -c "INSERT INTO users(
-    username
-  ) VALUES (
-    'user1'
-  )"
+  psql recipes -c "INSERT INTO users(username) VALUES ('testUser1'),  ('testUser2'),  ('testUser3'),  ('testUser4'),  ('testUser5'),  ('testUser6'),  ('testUser7'),  ('testUser8'),  ('testUser9'),  ('testUser10'), ('testUser11'), ('testUser12'), ('testUser13'), ('testUser14'), ('testUser15'), ('testUser16'), ('testUser17'), ('testUser18'), ('testUser19'), ('testUser20'), ('testUser21'), ('testUser22'), ('testUser23'), ('testUser24'), ('testUser25'), ('testUser26'), ('testUser27'), ('testUser28'), ('testUser29'), ('testUser30'), ('testUser31'), ('testUser32'), ('testUser33'), ('testUser34'), ('testUser35'), ('testUser36'), ('testUser37'), ('testUser38'), ('testUser39'), ('testUser40'), ('testUser41'), ('testUser42'), ('testUser43'), ('testUser44'), ('testUser45'), ('testUser46'), ('testUser47'), ('testUser48'), ('testUser49'), ('testUser50'), ('testUser51'), ('testUser52'), ('testUser53'), ('testUser54'), ('testUser55'), ('testUser56'), ('testUser57'), ('testUser58'), ('testUser59'), ('testUser60'), ('testUser61'), ('testUser62'), ('testUser63'), ('testUser64'), ('testUser65'), ('testUser66'), ('testUser67'), ('testUser68'), ('testUser69'), ('testUser70'), ('testUser71'), ('testUser72'), ('testUser73'), ('testUser74'), ('testUser75'), ('testUser76'), ('testUser77'), ('testUser78'), ('testUser79'), ('testUser80'), ('testUser81'), ('testUser82'), ('testUser83'), ('testUser84'), ('testUser85'), ('testUser86'), ('testUser87'), ('testUser88'), ('testUser89'), ('testUser90'), ('testUser91'), ('testUser92'), ('testUser93'), ('testUser94'), ('testUser95'), ('testUser96'), ('testUser97'), ('testUser98'), ('testUser99'), ('testUser100')"
 
-  psql recipes -c "INSERT INTO users(
-    username
-  ) VALUES (
-    'user2'
-  )"
+    echo '✔  Test Users populated 0 to 100 Real Quick';
 
-  psql recipes -c "INSERT INTO users(
-    username
-  ) VALUES (
-    'user3'
-  )"
-
-  psql recipes -c "INSERT INTO users(
-    username
-  ) VALUES (
-    'user4'
-  )"
   
   #CUPCAKES
   psql recipes -c "INSERT INTO recipes (
     author,
     title,
-    images ,
-    followers ,
+    images,
     yield,
-    yield_unit ,
-    ingredients ,
+    yield_unit,
+    ingredients,
     prep_time,
     prep_steps,
     cook_time,
     cook_steps,
     finish_steps,
-    tags
+    description
   ) VALUES (
     1,
     'Vegan Red Velvet Cupcakes',
@@ -76,11 +56,6 @@ function seedData {
       'http://40aprons.com/wp-content/uploads/2013/10/red_velvet_cupcakes+2+of+81.jpg',
       'http://cf.tasteandtellblog.com/wp-content/uploads/2014/09/Red-Velvet-Cupcakes-recipe-taste-and-tell-1b-opt.jpg',
       'http://ww2.hdnux.com/photos/13/62/31/3089985/3/920x920.jpg'
-    ],
-    ARRAY [
-      1,
-      2,
-      3
     ],
     12,
     'Cupcakes',
@@ -126,40 +101,30 @@ function seedData {
       'Keep tightly covered and refrigerated until ready to use.',
       'Add sprinkles/garnish if desirerd.'
     ],
-    ARRAY[
-      'vegan', 
-      'vegetarian',
-      'dairy-free'
-    ]
+    'The chocolate extract REALLY makes it, so it is worth finding. As well as the little hint of almond. For the frosting, you can cut the sugar down to 1 1/2-3/4 cup, and it will still be quite sweet.'
   )";
-  echo '✔  Cupcakes in the oven!';
+  echo '✔  1 Cupcakes in the oven!';
 
   #SAMOSAS
   psql recipes -c "INSERT INTO recipes (
     author,
     title,
-    images ,
-    followers ,
+    images,
     yield,
-    yield_unit ,
-    ingredients ,
+    yield_unit,
+    ingredients,
     prep_time,
     prep_steps,
     cook_time,
     cook_steps,
     finish_steps,
-    tags
+    description
   ) VALUES (
     2,
     'Samosas',
     ARRAY [
       'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/74/55/picO1qehQ.jpg',
       'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/74/55/picGG8P8T.jpg'
-    ],
-    ARRAY [
-      1,
-      2,
-      3
     ],
     24,
     'Samosas',
@@ -217,20 +182,17 @@ function seedData {
       'Cool on the paper towel or drying rack',
       'Finally, you can enjoy a samosa!'
     ],
-    ARRAY[
-      'vegetarian'
-    ]
+    'The seasoning given here is what I would consider a minimum but you may want to add more to your taste, especially when it comes to the hot pepper. You could also do half potatoes and half carrots for the filling if you like.'
   )";
 
-  echo '✔  Dosas and Samosas!';
+  echo '✔  2 Dosas and Samosas!';
 
 
-  #vanilla ICE CREAM
+  #Vanilla ICE CREAM
   psql recipes -c "INSERT INTO recipes (
     author,
     title,
     images ,
-    followers ,
     yield,
     yield_unit ,
     ingredients ,
@@ -239,18 +201,13 @@ function seedData {
     cook_time,
     cook_steps,
     finish_steps,
-    tags
+    description
   ) VALUES (
     3,
     'Vanilla Ice Cream',
     ARRAY [
       'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/47/90/picDnUZU9.jpg',
       'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/47/90/piceKa5F5.jpg'
-    ],
-    ARRAY [
-      1,
-      2,
-      3
     ],
     1,
     'Quart',
@@ -274,12 +231,10 @@ function seedData {
     ARRAY [
       'Top with sprinkles, whipped cream, a cherry, and enjoy!'
     ],
-    ARRAY[
-      'dessert'
-    ]
+    'Always welcome on hot days.'
   )";
   
-  echo '✔  I Scream You Scream';
+  echo '✔  3 I Scream You Scream';
 
   #Cake Batter ICE CREAM
   psql recipes -c "INSERT INTO recipes (
@@ -287,16 +242,15 @@ function seedData {
     parent,
     title,
     images ,
-    followers ,
     yield,
-    yield_unit ,
-    ingredients ,
+    yield_unit,
+    ingredients,
     prep_time,
     prep_steps,
     cook_time,
     cook_steps,
     finish_steps,
-    tags
+    description
   ) VALUES (
     4,
     3,
@@ -305,11 +259,6 @@ function seedData {
       'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/89/52/f15xnUJJQc2kJB0O1v6o_birthday-cake-ice-cream-7207.jpg',
       'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/89/52/J3XsYX6tTTeN2E1pi9uB_birthday-cake-ice-cream-7204.jpg',
       'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/89/52/pic7sRu1R.jpg'
-    ],
-    ARRAY [
-      1,
-      2,
-      3
     ],
     11,
     'Cup Servings',
@@ -336,12 +285,363 @@ function seedData {
     ARRAY [
       'Top with sprinkles, whipped cream, a cherry, and enjoy!'
     ],
-    ARRAY[
-      'dessert'
-    ]
+    'I recommend using Splenda instead of sugar since there is sugar in the cake mix. You can use 2 teaspoons of vanilla extract if you please. You can also use 3/4 cup of cake mix.'
   )";
   
-  echo '✔  We All Scream for Ice Cream!';
+  echo '✔  4 We All Scream for Ice Cream!';
+
+  #RIBS
+  psql recipes -c "INSERT INTO recipes (
+    author,
+    title,
+    images ,
+    yield,
+    yield_unit,
+    ingredients,
+    prep_time,
+    prep_steps,
+    cook_time,
+    cook_steps,
+    finish_steps,
+    description
+  ) VALUES (
+    5,
+    'Low & Slow Oven Baked Ribs',
+    ARRAY [
+      'http://pictures.food.com/api/file/kXkN9RrHSmKbEXu5EFkb-191-ribs.jpg/convert?loc=/pictures.food.com/recipes/30/32/45/HaU7lGxtTNmZxI856Ztg_191%20ribs.jpg&width=555&height=416&fit=max&flags=progressive&quality=95',
+      'http://pictures.food.com/api/file/VZs7n3wcT1u3NVkYGP9Y-182-ribs.jpg/convert?loc=/pictures.food.com/recipes/30/32/45/SLXUtfXbTqWfANRxuHmA_182%20ribs.jpg&width=555&height=416&fit=max&flags=progressive&quality=95'
+    ],
+    1,
+    'rack of ribs',
+    ARRAY [
+      '2 racks pork baby back ribs (our favorite are baby back ribs, but this works well with St. Louis style ribs too)',
+      '1 cup barbecue sauce'
+    ],
+    5,
+    ARRAY [
+      'Preheat oven to 225 degrees.',
+      'Season your ribs with your favorite rib rub, grill seasoning, or simply salt and pepper.',
+      'Place ribs, meat side down, in baking dishes.'
+    ],
+    240,
+    ARRAY [
+      'Cover the baking dishes with aluminum foil and place in the oven.',
+      'If you are using small baby back ribs, take out after 3.5 hours. If you are using regular baby back or St. Louis style ribs, then take out after 4 hours.',
+      'Drain off the drippings. Flip the ribs over using two spatulas (and an extra set of hands if you have them) so the meat side is up. Be careful, as they may be so tender they fall apart.'
+    ],
+    ARRAY [
+      'Put a layer of BBQ sauce on the ribs and return to the oven uncovered for an additional 20-30 minutes.',
+      'Remove from oven and serve them up with a side of potato salad and some baked beans.'
+    ],
+    'I carefully attempted various combinations of flavors until I found one that I and my customers thought was perfect.'
+  )";
+  
+  echo '✔  5 Baby Back Baby Back RIBS';
+
+  #Madeline Cookies
+  psql recipes -c "INSERT INTO recipes (
+    author,
+    title,
+    images ,
+    yield,
+    yield_unit,
+    ingredients,
+    prep_time,
+    prep_steps,
+    cook_time,
+    cook_steps,
+    finish_steps,
+    description
+  ) VALUES (
+    6,
+    'Madeline Cookies',
+    ARRAY [
+      'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/92/05/picQi349N.jpg',
+      'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/92/05/picXBhlVB.jpg'
+    ],
+    20,
+    'cookies',
+    ARRAY [
+      '2 large eggs',
+      '2⁄3 cup sugar',
+      '1 teaspoon vanilla extract',
+      '1⁄2 teaspoon grated lemon peel',
+      '1 pinch salt',
+      '1 cup all-purpose flour',
+      '10 tablespoons unsalted butter, melted, cooled slightly'
+    ],
+    15,
+    ARRAY [
+      'Preheat oven to 375°F Generously butter and flour pan for large madeleines (about 3x1 1/4 inches).',
+      'Spoon 1 tablespoon batter into each indentation in pan. Bake until puffed and brown, about 10-16 minutes. Cool 5 minutes. Gently remove from pan. Repeat process, buttering and flouring pan before each batch. (Can be made 1 day ahead.).'
+    ],
+    25,
+    ARRAY [
+      'Using electric mixer, beat eggs and 2/3 cup sugar in large bowl just to blend. Beat in vanilla, lemon peel and salt. Add flour; beat just until blended. Gradually add cooled melted butter in steady stream, beating just until blended.
+'
+    ],
+    ARRAY [
+      'Dust cookies with powdered sugar.'
+    ],
+    'I carefully attempted various combinations of flavors until I found one that I and my customers thought was perfect.'
+  )";
+  
+  echo '✔  6 Madeline Cookies';
+
+    # Mushroom Risotto
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      7,
+      'Mushroom Risotto',
+      ARRAY [
+        'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/21/35/35/picI83SuK.jpg',
+        'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/21/35/35/picVFpSeW.jpg'
+      ],
+      6,
+      'servings',
+      ARRAY [
+        '6 cups chicken broth',
+        '3 tablespoons oil',
+        '2 lbs white mushrooms, sliced thin',
+        '2 shallots, diced',
+        '1 1⁄2 cups arborio rice',
+        '1⁄2 cup dry white wine (or white wine substitute White Wine Substitute (non-alcoholic Substitute))',
+        'salt, to taste',
+        'black pepper, to taste',
+        '3 tablespoons chives',
+        '4 tablespoons butter',
+        '1⁄3 cup grated parmesan cheese'
+      ],
+      20,
+      30,
+      ARRAY [
+        'Heat the broth over low heat.',
+        'In a large saucepan, heat 2 tablespoons of oil and cook the mushrooms until soft. about 3 minute',
+        'Put the mushrooms and the liquid in a bowl and set aside.',
+        'Add the remaining 1 tablespoons oil to skillet, and cook the shallots for 1 minute.',
+        'Stir in the rice,coating it with oil, about 2 minutes.',
+        'When the rice has taken on a pale, golden color, add the wine, stirring constantly until it is fully absorbed.',
+        'Add 1/2 cup broth to the rice, and stir until the broth is absorbed.',
+        'Continue adding broth 1/2 cup at a time, stirring continuously, until the liquid is absorbed and the rice is tender-firm.'
+      ],
+      ARRAY [
+        'Remove from heat, and stir in mushrooms with their liquid, butter, chives, and parmesan. Season with salt and pepper to taste.'
+      ],
+      'A timeless dish for any occassion.'
+    )";
+    
+    echo '✔  7 UOENO Risotto';
+
+    # Cajun Chicken Pasta
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      prep_steps,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      8,
+      'Creamy Cajun Chicken Pasta',
+      ARRAY [
+        'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/39/08/7/piccZDaro.jpg',
+        'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/39/08/7/CgDMsf7T2Wssje5yZMKu_munchkintime.com%20(17%20of%2019).JPG'
+      ],
+      2,
+      'servings',
+      ARRAY [
+        '2 boneless skinless chicken breast halves, cut into thin strips',
+        '4 ounces linguine, cooked al dente',
+        '2 teaspoons cajun seasoning (your recipe, Cajun Seasoning Mix or store-bought)',
+        '2 tablespoons butter',
+        '1 thinly sliced green onion',
+        '1⁄2 cup heavy whipping cream',
+        '2 tablespoons chopped sun-dried tomatoes',
+        '1⁄4 teaspoon salt',
+        '1⁄4 teaspoon dried basil',
+        '1⁄8 teaspoon ground black pepper',
+        '1⁄8 teaspoon garlic powder',
+        '1⁄4 cup grated parmesan cheese'
+      ],
+      10,
+      ARRAY [
+        'Place chicken and Cajun seasoning in a bowl and toss to coat.'
+      ],
+      15,
+      ARRAY [
+        'In a large skillet over medium heat, sauté chicken in butter or margarine until chicken is tender, about 5 to 7 minutes.',
+        'Reduce heat add green onion, heavy cream, tomatoes, basil, salt, garlic powder, black pepper and heat through.'
+      ],
+      ARRAY [
+        'Pour over hot linguine and toss with Parmesan cheese.'
+      ],
+      'Nawlins style of chicken with an updated Alfredo sauce.'
+    )";
+    
+    echo '✔  8 Hola NOLA';
+
+    #Japanese Wings
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      8,
+      'Japanase Style Wings',
+      ARRAY [
+        'http://pictures.food.com/api/file/TuGlaMWQ5OBe6LrnaGAB-1531645_10203894315582622_620837910_n.jpg/convert?loc=/pictures.food.com/recipes/68/95/5/7YxSddiDTJWpw2LIaNQO_1531645_10203894315582622_620837910_n.jpg&width=555&height=416&fit=max&flags=progressive&quality=95',
+        'http://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/68/95/5/picl2GBti.jpg'
+      ],
+      4,
+      'servings',
+      ARRAY [
+        '8 chicken drumsticks, skin on (the skin is important for flavour, and is so tasty to eat!)',
+        '1 cup water',
+        '1⁄2 cup balsamic vinegar',
+        '1⁄3 cup soy sauce',
+        '2 1⁄2 tablespoons sugar',
+        '1 garlic clove, peeled and bruised',
+        '1 small hot chili pepper, slit open, seeds removed'
+      ],
+      5,
+      40,
+      ARRAY [
+        'Place all the ingredients in a saucepan over a high heat.',
+        'Bring to the boil, then reduce to a simmer for about 20 minutes.',
+        'Remove any scum that rises to the surface.',
+        'Increase the heat, turning the drumsticks frequently in the liquid, and cook until the liquid has reduced to a sticky glaze.'
+      ],
+      ARRAY [
+        'Arrange the chicken on a serving platter, remove the garlic clove and chili from the liquid, and spoon the glaze over.'
+      ],
+      'Authentic Japanese-Style Wings'
+    )";
+    
+    echo '✔  9 Ichi Ni San WINGS!';
+
+    # Bahn Mi Lettuce Wraps
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      4,
+      'Bahn Mi Lettuce Wraps',
+      ARRAY [
+        'http://cdn-img.health.com/sites/default/files/styles/420x420/public/styles/main/public/butter-lettuce-avocado-salad-XL.jpg'
+      ],
+      4,
+      'servings',
+      ARRAY [
+        '1⁄2lemon, juiced',
+        'salt',
+        '12 ounces raw shrimp, peeled and deveined',
+        '2 tablespoons rice vinegar',
+        '1 small green apple, julienned',
+        '1 medium carrot, shredded',
+        '1 small kirby cucumber, cut into matchstick-size strips',
+        '1 small jalapeno, sliced into rings',
+        '1 scallion, chopped',
+        'fresh ground black pepper',
+        '4 large bibb lettuce',
+        '4 sprigs fresh cilantro'
+      ],
+      10,
+      15,
+      ARRAY [
+        'Fill a medium saucepan three-quarters with water. Add the lemon juice and bring to a boil. Add a pinch of salt and then drop the shrimp into the boiling water, cook until the shrimp are opaque, 2 to 3 minutes.',
+        'While shrimp cooks, create an ice bath. Drain the shrimp and place in the ice bath. Once cooled, drain the shrimp and pat off any excess water. Set aside.',
+        'Combine the vinegar, apples, carrots, cucumbers, jalapenos and scallions in a bowl. Season the salad with salt and pepper.'
+      ],
+      ARRAY [
+        'To assemble the wraps, lay out the lettuce leaves. Divide the poached shrimp and salad among the leaves. Top each with a sprig of cilantro.',
+        'To prepare ahead of time, pack the lettuce, shrimp and 1/4 cup salad in separate containers and assemble when you are ready to eat.'
+      ],
+      'This sandwich is traditionally prepared with pork, baguette, mayo and pate. Cut out the bread and replace it with Bibb lettuce, and add in high-protein shrimp, extra veggies and green apple for a bit of sweetness.'
+    )";
+    
+    echo '✔  10 Bahn-d for life';
+
+    # Asparagus and Fontina Pizza
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      11,
+      'Roasted Asparagus and Fontina Pizza',
+      ARRAY [
+        'http://cdn-img.health.com/sites/default/files/styles/420x420/public/styles/main/public/asparagus-pizza-XL.jpg'
+      ],
+      4,
+      'servings',
+      ARRAY [
+        '1 tablespoon red wine vinegar',
+        '2 1/2 teaspoons Dijon mustard',
+        'Kosher salt and freshly ground black pepper',
+        '2 tablespoons grapeseed or other neutral oil',
+        '2 teaspoons extra-virgin olive oil',
+        '1 head butter lettuce, torn',
+        '8 French breakfast radishes or round red radishes, halved',
+        '1 scallion, white and pale green parts only, thinly sliced at an angle',
+        '2 tablespoons roughly chopped fresh dill',
+        '1 avocado, halved, pitted, peeled and sliced'
+      ],
+      5,
+      5,
+      ARRAY [
+        'In a large bowl, whisk vinegar and mustard with a pinch each of salt and pepper. While whisking, add oils in a slow, steady stream to emulsify.'
+      ],
+      ARRAY [
+        'Toss dressing with lettuce, radishes, scallion and dill. Top with avocado and serve.'
+      ],
+      'Try this recipe in early spring, when the first radishes appear at farmers' market'
+    )";
+    
+    echo '✔  11 Avocado-m-g';
+
+
 };
 
 function checkDatabase {

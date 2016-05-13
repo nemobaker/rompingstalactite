@@ -25,18 +25,19 @@ CREATE TABLE "recipes" (
 	-- will need to make author NOT NULL in future implementation
   "author" integer,
   "parent" integer,
-  "images" TEXT[] NOT NULL,
+  "images" TEXT[],
   "followers" TEXT[],
   "yield" integer NOT NULL,
   "yield_unit" TEXT NOT NULL,
   "ingredients" TEXT[] NOT NULL,
-  "prep_time" integer NOT NULL,
-  "prep_steps" TEXT[] NOT NULL,
+  "prep_time" integer,
+  "prep_steps" TEXT[],
   "cook_time" integer NOT NULL,
   "cook_steps" TEXT[] NOT NULL,
   "finish_steps" TEXT[] NOT NULL,
-  "tags" TEXT[] NOT NULL,
+  "tags" TEXT[],
   "fork_history" integer[],
+  "description" TEXT,
 	CONSTRAINT recipes_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
