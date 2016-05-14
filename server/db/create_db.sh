@@ -561,7 +561,7 @@ function seedData {
       4,
       'Bahn Mi Lettuce Wraps',
       ARRAY [
-        'http://cdn-img.health.com/sites/default/files/styles/420x420/public/styles/main/public/butter-lettuce-avocado-salad-XL.jpg'
+        'http://img.sndimg.com/food/image/upload/w_614,h_461,c_fit/v1/img/submissions/recipe/0/94QfwdbcQiyZvjuGomTu_0242675_A7%20Bahn%20Mi_04.jpg'
       ],
       4,
       'servings',
@@ -595,7 +595,7 @@ function seedData {
     
     echo '✔  10 Bahn-d for life';
 
-    # Asparagus and Fontina Pizza
+    # Avocado Salad
     psql recipes -c "INSERT INTO recipes (
       author,
       title,
@@ -610,9 +610,9 @@ function seedData {
       description
     ) VALUES (
       11,
-      'Roasted Asparagus and Fontina Pizza',
+      'Butter Lettuce, Radish and Avocado Salad with Mustard Dressing',
       ARRAY [
-        'http://cdn-img.health.com/sites/default/files/styles/420x420/public/styles/main/public/asparagus-pizza-XL.jpg'
+        'http://cdn-img.health.com/sites/default/files/styles/420x420/public/styles/main/public/butter-lettuce-avocado-salad-XL.jpg'
       ],
       4,
       'servings',
@@ -636,11 +636,284 @@ function seedData {
       ARRAY [
         'Toss dressing with lettuce, radishes, scallion and dill. Top with avocado and serve.'
       ],
-      'Try this recipe in early spring, when the first radishes appear at farmers' market'
+      'Try this recipe in early spring, when the first radishes appear at farmers market'
     )";
     
     echo '✔  11 Avocado-m-g';
 
+    # Roasted Asparagus and Fontina Pizza
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      prep_steps,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      12,
+      'Roasted Asparagus and Fontina Pizza',
+      ARRAY [
+        'http://cdn-img.health.com/sites/default/files/styles/420x420/public/styles/main/public/asparagus-pizza-XL.jpg'
+      ],
+      4,
+      'servings',
+      ARRAY [
+        '1 tablespoon olive oil',
+        '2 garlic cloves, minced',
+        '12 ounces asparagus',
+        '1/8 teaspoon salt',
+        '1/8 teaspoon pepper',
+        'All-purpose flour and cornmeal',
+        '1 pound whole-wheat pizza dough, room temperature',
+        '1/2 cup grated Fontina cheese'
+      ],
+      5,
+      ARRAY [
+        'Place an oven rack on lowest position and preheat to 500°F.',
+        'Combine oil and garlic. Trim asparagus; toss with salt, pepper and half of garlic mixture on a rimmed baking sheet. Roast for 5 minutes.'
+      ],
+      17,
+      ARRAY [
+        'On a lightly floured surface, roll dough into a 16- by 10-inch rectangle. Generously sprinkle a second baking sheet with cornmeal. Place dough on sheet. Add cheese and asparagus, leaving a 1/2-inch border.',
+        'Bake until cheese has melted and crust is crisp, about 12 minutes.'
+      ],
+      ARRAY [
+        'Top with remaining garlic oil. Cut into 8 slices. Serve.'
+      ],
+      'With a whole-wheat crust topped with fresh vegetables, this recipe will satisfy your pizza cravings. Spring is the best time to get asparagus, which is full of vitamins and antioxidants.'
+    )";
+    
+    echo '✔  12 Piza-za-zing';
+
+    # Peanut Butter Cup Smoothie
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      prep_steps,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      13,
+      'Peanut-Butter-Cup Smoothie',
+      ARRAY [
+        'http://www.health.com/health/gallery/0,,20686160,00.html/ad-9'
+      ],
+      3,
+      'servings',
+      ARRAY [
+        '1 cup sliced ripe banana',
+        '1 cup 1% chocolate low-fat milk',
+        '1/2 cup vanilla low-fat frozen yogurt',
+        '2 tablespoons natural-style peanut butter',
+        '1 (8-ounce) carton vanilla low-fat yogurt'
+      ],
+      60,
+      ARRAY [
+        'Place banana in freezer',
+        'Freeze until firm (about an hour)',
+        'Remove from freezer',
+        'Let stand 5 minutes.'
+      ],
+      5,
+      ARRAY [
+        'Combine banana and remaining ingredients in a blender',
+        'Process until smooth.'
+      ],
+      ARRAY [
+        'Serve immediately',
+        'Top with low-fat whipped cream or cocoa nibbs for an extra crunch!'
+      ],
+      'This drink tastes like a Reeses Peanut Butter Cup, and packs more than 20% of your daily calcium, plus a serving of potassium-rich banana.'
+    )";
+    
+    echo '✔  13 Build Me Up Buttercup';
+
+    # Grilled Zucchini Roll-Ups With Herbs and Cheese
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      prep_steps,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      13,
+      'Grilled Zucchini Roll-Ups With Herbs and Cheese',
+      ARRAY [
+        'http://cdn-img.health.com/sites/default/files/styles/420x420/public/styles/main/public/grilled-zucchini-hl-1713091-x.jpg'
+      ],
+      4,
+      'servings',
+      ARRAY [
+        '3 small green and/or yellow zucchini (about 1/2 pound each), cut lengthwise into 1/4-inch-thick slices',
+        '1 tablespoon olive oil',
+        '1/8 teaspoon salt, plus more to taste',
+        '1/16 teaspoon of freshly ground black pepper, plus more to taste',
+        '1 1/2 ounces fresh goat cheese',
+        '1 tablespoon chopped fresh parsley',
+        '1/2 teaspoon fresh lemon juice',
+        '2 ounces bagged baby spinach (2 cups lightly packed)',
+        '1/3 cup basil leaves'
+      ],
+      30,
+      ARRAY [
+        'Preheat grill or grill pan to medium.',
+        'Discard the outermost slices of zucchini; brush the rest with oil on both sides.',
+        'Sprinkle the zucchini slices with salt and pepper.'
+      ],
+      24,
+      ARRAY [
+        'Grill until tender, about 4 minutes per side.',
+        'In a small bowl, combine the goat cheese, parsley, and lemon juice, mashing together with a fork.',
+        'Put 1/2 teaspoon of the cheese mixture about 1/2 inch from the end of a zucchini slice.'
+      ],
+      ARRAY [
+        'Top with a few spinach leaves and a small (or half of a large) basil leaf.',
+        'Roll up and place seam side down on a platter.' 
+      ],
+      'Thin slices of grilled zucchini give this appetizer a delicate air. Rolled up with goat cheese, herbs, and spinach, these sushi-like treats are full of flavor and color.'
+    )";
+    
+    echo '✔  13 Yello Polka Dot Zucchini';
+
+    # Silken Tofu Caesar Salad
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      prep_steps,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      14,
+      'Silken Tofu Caesar Salad',
+      ARRAY [
+        'http://cdn-img.health.com/sites/default/files/styles/420x420/public/styles/main/public/skinny-caesar-xl.jpg'
+      ],
+      4,
+      'servings',
+      ARRAY [
+        'Olive oil cooking spray',
+        '1 pound skinless, boneless chicken breast halves',
+        '1/4 plus 1/8 teaspoon kosher salt, divided',
+        '1/4 plus 1/8 teaspoon freshly ground black pepper, divided',
+        '1/2 cup silken soft tofu',
+        '2 tablespoons fresh lemon juice',
+        '1 tablespoon extra-virgin olive oil',
+        '1 1/2 teaspoons Dijon mustard',
+        '1 1/2 teaspoons red wine vinegar',
+        '1 teaspoon Worcestershire sauce',
+        '3/4 teaspoon minced garlic',
+        '1/2 teaspoon anchovy paste',
+        '1 tablespoon water',
+        '2 tablespoons grated and 1/4 cup shaved fresh Parmesan cheese',
+        '8 cups romaine lettuce cut crosswise into 2-inch strips',
+        '1 1/4 cups fat-free croutons'
+      ],
+      15,
+      ARRAY [
+        'Heat grill pan to medium-high.',
+        'Mist chicken breasts with olive oil spray, and season with 1/4 teaspoon each salt and pepper.'
+      ],
+      12,
+      ARRAY [
+        'Grill chicken until just cooked through, about 5–6 minutes per side.',
+        'Place chicken on a cutting board and let rest about 5 minutes to allow juices to redistribute; cut into bite-size pieces.',
+        'Mix next 8 ingredients and remaining salt and pepper in a blender until well-combined and creamy, scraping down blender sides, as necessary.',
+        'Add 1 tablespoon water to thin.',
+        'Stir in grated Parmesan.',
+        'Toss lettuce, croutons, and dressing in a large bow'
+      ],
+      ARRAY [
+        'Divide among 4 plates.',
+        'Arrange chicken over salads, sprinkling each evenly with shaved Parmesan.'
+      ],
+      'A light fresh spin for the king of salads'
+    )";
+    
+    echo '✔  14 2Fast Tofurious';
+
+    # Sous vide steak
+    psql recipes -c "INSERT INTO recipes (
+      author,
+      title,
+      images ,
+      yield,
+      yield_unit,
+      ingredients,
+      prep_time,
+      prep_steps,
+      cook_time,
+      cook_steps,
+      finish_steps,
+      description
+    ) VALUES (
+      15,
+      'Sous Vide Steak',
+      ARRAY [
+        'https://d3awvtnmmsvyot.cloudfront.net/api/file/GlHAjj5PTziRAs9xtSIM/convert?fit=max&w=1050&quality=60&cache=true&rotate=exif&compress=true',
+        'https://d3awvtnmmsvyot.cloudfront.net/api/file/0vPSe3FLRlWugioQaTN4/convert?fit=max&w=1050&quality=60&cache=true&rotate=exif&compress=true',
+        'https://d3awvtnmmsvyot.cloudfront.net/api/file/avZ4hNMgTaOU93wDhh9G/convert?fit=max&w=1050&quality=60&cache=true&rotate=exif&compress=true'
+      ],
+      1,
+      'delicious steak',
+      ARRAY [
+        'Steak, 1 in thick',
+        'Salt, kosher, as needed',
+        'Black pepper, freshly ground, as needed ',
+        'Olive oil, as needed',
+        'Bay leaf, fresh, or other fresh herbs, as needed',
+        'Butter, as needed',
+        '* Sous vide setup'
+      ],
+      15,
+      ARRAY [
+        'Generously season both sides of the steak with salt and freshly ground pepper.',
+        'Use these photos as a guide to help you decide how you’d like your meat done. We like ours rare, at 129 °F / 54 °C.',
+        'Place your steak in a ziplock-style bag—or a sous vide bag if you have one.',
+        'Add about two tablespoons of olive oil or other fat, plus whatever fresh herbs you have on hand. We used fresh bay leaf, but thyme or rosemary will work too.'
+      ],
+      45,
+      ARRAY [
+        'Place the bag into the preheated water, with the top of the bag hanging over the edge of the pot.',
+        'Make sure you leave the top of the bag open so the air can escape.',
+        'Clip the top of the bag to the side of the pot to hold it in place.'
+        'A one-inch-thick steak will be ready to eat in 45 minutes, but it can hang out in the water for two hours or more without overcooking.'
+      ],
+      ARRAY [
+        'Preheat a skillet over high heat and add butter. Once the butter has stopped bubbling, add the steak from the bag. Toss in some fresh herbs for extra flavor.',
+        'Swirl the steak around in the pan, about two or three minutes per side. This step can be a little smoky and splattery—turn on your oven hood or open a window to vent the smoke.',
+        'The point of this step is just to get a nice, tasty crust, which you can also achieve by finishing the steak on the grill, in the broiler, or even in the deep-fryer.'
+      ],
+      'Get ready to experience the best steak you’ve ever tasted. Notice we said “tasted,” not “made.” Steakhouses, consider yourselves warned.'
+    )";
+    
+    echo '✔  15 Livin Sous Vida Loca';
 
 };
 
